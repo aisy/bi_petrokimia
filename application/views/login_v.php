@@ -82,21 +82,12 @@
                             </a>
                         </div>
 
-                        <div class="col-xs-6 text-right va-b pr5">
-                            <div class="login-links">
-                                <a href="pages_login.html" class="active" title="Sign In">Sign In</a>
-                                <span class="text-white"> | </span>
-                                <a href="pages_register.html" class="" title="Register">Register</a>
-                            </div>
-
-                        </div>
-
                     </div>
 
                     <div class="panel panel-info mt10 br-n">
                         <div class="col-lg-12 wow fadeInRight">
                             <!--Form-->
-                            <form action="<?php echo $url_login?>" method="post" id="form_login">
+                            <form action="<?= base_url('login/login') ?>" method="post" id="form_login">
 
                                 <div class="card wow fadeInRight" style="background:#FFF;">
                                     <div class="card-block">
@@ -107,7 +98,7 @@
                                             <input type="text" name="username" id="form3" class="form-control-login">
                                             <label for="form3">Username</label>
                                         </div>
-                                       
+
                                         <div class="md-form">
                                             <i class="fa fa-lock prefix"></i>
                                             <input type="password" name="password" id="form4" class="form-control-login">
@@ -115,7 +106,7 @@
                                         </div>
 
                                         <div class="text-xs-center">
-                                            <button class="btn btn-ins btn-lg" type="button" id="btn_login" >Sign Up</button>
+                                            <button class="btn btn-ins btn-lg" type="submit" id="btn_login" >Sign Up</button>
                                         </div>
 
                                     </div>
@@ -161,56 +152,10 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/main.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/demo.js"></script>
 
-    
+
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="<?php echo base_url();?>login/js/mdb.min.js"></script>
-
-    <!-- Page Javascript -->
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-
-            "use strict";
-
-            // Init Theme Core      
-            Core.init();
-
-            // Init Demo JS
-            Demo.init();
-
-            // Init CanvasBG and pass target starting location
-            CanvasBG.init({
-                Loc: {
-                    x: window.innerWidth / 2,
-                    y: window.innerHeight / 3.3
-                },
-            });
-
-             new WOW().init();
-
-        });
-
-        $(document).ready(function(){
-            $('#btn_login').click(function(){
-                $.ajax({
-                    url : '<?php echo base_url(); ?>login/login',
-                    data : $('#form_login').serialize(),
-                    type : "POST",
-                    dataType : "json",
-                    success : function(result){
-                        if(result=='1'){
-                            window.location='<?php echo base_url();?>home';
-                        }else{
-
-                        }
-                    }
-                });
-            });
-        });
-
-    </script>
-
-    <!-- END: PAGE SCRIPTS -->
 
 </body>
 

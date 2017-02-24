@@ -22,7 +22,7 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/skin/default_skin/css/theme.css">
- 
+
  	<!-- Admin Forms CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin-tools/admin-forms/css/admin-forms.css">
 
@@ -255,53 +255,6 @@
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown dropdown-item-slide">
-                    <a class="dropdown-toggle pl10 pr10" data-toggle="dropdown" href="#">
-                        <span class="octicon octicon-radio-tower fs18"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-hover dropdown-persist pn w350 bg-white animated animated-shorter fadeIn" role="menu">
-                        <li class="bg-light p8">
-                            <span class="fw600 pl5 lh30"> Notifications</span>
-                            <span class="label label-warning label-sm pull-right lh20 h-20 mt5 mr5">12</span>
-                        </li>
-                        <li class="p10 br-t item-1">
-                            <div class="media">
-                                <a class="media-left" href="#"> <img src="<?php echo base_url();?>assets/img/avatars/7.jpg" class="mw40" alt="holder-img"> </a>
-                                <div class="media-body va-m">
-                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
-                                    <a class="text-system" href="#"> Max </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="p10 br-t item-2">
-                            <div class="media">
-                                <a class="media-left" href="#"> <img src="<?php echo base_url();?>assets/img/avatars/7.jpg" class="mw40" alt="holder-img"> </a>
-                                <div class="media-body va-m">
-                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
-                                    <a class="text-system" href="#"> Max </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="p10 br-t item-3">
-                            <div class="media">
-                                <a class="media-left" href="#"> <img src="<?php echo base_url();?>assets/img/avatars/7.jpg" class="mw40" alt="holder-img"> </a>
-                                <div class="media-body va-m">
-                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
-                                    <a class="text-system" href="#"> Max </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="p10 br-t item-4">
-                            <div class="media">
-                                <a class="media-left" href="#"> <img src="<?php echo base_url();?>assets/img/avatars/7.jpg" class="mw40" alt="holder-img"> </a>
-                                <div class="media-body va-m">
-                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
-                                    <a class="text-system" href="#"> Max </a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="flag-xs flag-us"></span>
@@ -471,7 +424,7 @@
                                     <span class="glyphicons glyphicons-calendar"></span> Pupuk Non-Subsidi </a>
                             </li>
                             <li>
-                           
+
                         </ul>
                     </li>
 
@@ -492,11 +445,11 @@
                                 <a href="ui_animations.html">
                                     <span class="glyphicons glyphicons-dislikes"></span> Stok Bahan Baku </a>
                             </li>
-                           
+
                         </ul>
                     </li>
-                                   
-                                                      
+
+
 
                 </ul>
                 <div class="sidebar-toggle-mini">
@@ -736,7 +689,7 @@
 
         "use strict";
 
-        // Init Theme Core      
+        // Init Theme Core
         Core.init({
             sbm: "sb-l-c",
         });
@@ -747,9 +700,9 @@
         // Init Widget Demo JS
         // demoHighCharts.init();
 
-        // Because we are using Admin Panels we use the OnFinish 
+        // Because we are using Admin Panels we use the OnFinish
         // callback to activate the demoWidgets. It's smoother if
-        // we let the panels be moved and organized before 
+        // we let the panels be moved and organized before
         // filling them with content from various plugins
 
         // Init plugins used on this page
@@ -773,7 +726,7 @@
                 runVectorMaps();
 
                 // We also refresh any "in-view" waypoints to ensure
-                // the correct position is being calculated after the 
+                // the correct position is being calculated after the
                 // Admin Panels plugin moved everything
                 Waypoint.refreshAll();
 
@@ -842,7 +795,7 @@
                         selectedHover: {}
                     },
                 });
-                // Manual code to alter the Vector map plugin to 
+                // Manual code to alter the Vector map plugin to
                 // allow for individual coloring of countries
                 var states = ['US-CA', 'US-TX', 'US-MO',
                     'US-NY'
@@ -890,7 +843,7 @@
             }
         });
 
-	  	
+
 
     });
 </script>

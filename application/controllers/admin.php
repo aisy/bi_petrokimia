@@ -9,30 +9,28 @@ class Admin extends CI_Controller {
 		$this->load->model('admin_m');
 	}
 
-	
+
 	public function index()
 	{
-		$data=array(
-			'title'=>'Admin',
-			'page'=>'admin_v',
-			'view'=>'admin',
-			'open'=>'class="accordion-toggle menu-open"',
-			'active'=>'class="active"',
-			'data'=>$this->admin_m->tampilData(),
-			'url_hapus'=>base_url().'admin/hapus'
-		);
-		$this->load->view('home_v',$data);	
+
+		$data['title'] = "Admin";
+		$data['page']	 = "Admin_v";
+		$data['view']  = "Admin";
+		$data['open']  = 'class= "accordion-toggle menu-open"';
+		$data['active'] = 'class="active"';
+
+		$data['data'] = $this->admin_m->tampilData();
+		$data['url_hapus'] = base_url('admin/hapus');
+
+		$this->load->view('home_v',$data);
 	}
 
 	function simpan(){
-		$nama_admin=$this->input->post('nama');
-		$username=$this->input->post('username');
-		$password= md5($this->input->post('password'));
-		$tgl_daftar=$this->input->post('tgl_daftar');
 
-		$this->admin_m->simpan($nama_admin,$username,$password,$tgl_daftar);
+		$this->admin_m->simpan();
+
 		// $this->session->set_flashdata('simpan','1');
-		// redirect('admin');
+		// redirect(base_url('admin'));
 		echo '1';
 	}
 
@@ -43,25 +41,23 @@ class Admin extends CI_Controller {
 		echo json_encode($data);
 	}
 
-	function ubah(){
-		$nama_admin=$this->input->post('nama');
-		$username=$this->input->post('username');
-		$password= $this->input->post('password');
-		$id_ubah=$this->input->post('id_ubah');
+	function ubah($id){
 
 		if (!empty($password)){
-			$this->admin_m->ubahDenganPassword($id_ubah,$nama_admin,$username,md5($password));
+			$this->admin_m->ubahDenganPassword($id);
 		}else{
-			$this->admin_m->ubahTanpaPassword($id_ubah,$nama_admin,$username);
+			$this->admin_m->ubahTanpaPassword($id);
 		}
 		echo '1';
 
 	}
 
-	function hapus(){
-		$id_admin=$this->input->post('id_hapus');
+	function hapus($id){
+
 		$this->admin_m->hapus($id_admin);
+
 		$this->session->set_flashdata('hapus','1');
 		redirect('admin');
-	} 
+	}
+
 }
