@@ -6,7 +6,7 @@ class Pupuk extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('admin_m');
+		$this->load->model('pupuk_m');
 	}
 
 	
@@ -18,19 +18,19 @@ class Pupuk extends CI_Controller {
 			'view'=>'pupuk',
 			'open'=>'class="accordion-toggle menu-open"',
 			'active'=>'class="active"',
-			'data'=>$this->admin_m->tampilData(),
-			'url_hapus'=>base_url().'admin/hapus'
+			'data'=>$this->pupuk_m->tampilData(),
+			'url_hapus'=>base_url().'pupuk/hapus'
 		);
 		$this->load->view('home_v',$data);	
 	}
 
 	function simpan(){
-		$nama_admin=$this->input->post('nama');
-		$username=$this->input->post('username');
-		$password= md5($this->input->post('password'));
-		$tgl_daftar=$this->input->post('tgl_daftar');
+		$nama_pupuk=$this->input->post('nama_pupuk');
+		$spesifikasi_pupuk=$this->input->post('spesifikasi_pupuk');
+		$sifat_pupuk= md5($this->input->post('sifat_pupuk'));
+		$gambar=$this->input->post('gambar');
 
-		$this->admin_m->simpan($nama_admin,$username,$password,$tgl_daftar);
+		$this->admin_m->simpan($nama_pupuk,$spesifikasi_pupuk,$sifat_pupuk,$gambar);
 		// $this->session->set_flashdata('simpan','1');
 		// redirect('admin');
 		echo '1';
@@ -38,8 +38,8 @@ class Pupuk extends CI_Controller {
 
 // json_encode digunakan untuk pemanggilan data dari php dipanggil di ajax atau java script
 	function tampilDatabyId(){
-		$id_admin=$this->input->post('id_admin');
-		$data=$this->admin_m->tampilDatabyId($id_admin);
+		$id_pupuk=$this->input->post('id_pupuk');
+		$data=$this->pupuk_m->tampilDatabyId($id_pupuk);
 		echo json_encode($data);
 	}
 

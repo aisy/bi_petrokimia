@@ -7,6 +7,11 @@ inline element with the appropriate classes, like so:
 
 <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
 
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+
 Import the fonts*/
 @font-face {
   font-family: 'Glyphicons Halflings';
