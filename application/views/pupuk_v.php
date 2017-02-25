@@ -67,7 +67,7 @@
       <span class="panel-title">Input Data Pupuk</span>
     </div>
     <div class="panel-body">
-      <form class="admin-form" action="<?= base_url('pupuk/tambahData') ?>" method="post">
+      <form class="admin-form" action="<?= base_url('pupuk/simpan') ?>" method="post">
 
         <div class="section">
           <label for="nama_pupuk" class="field prepend-icon">
@@ -103,7 +103,7 @@
 
 
         <div class="col-xs-6 col-xs-offset-3">
-          <button type="button" class="btn btn-rounded btn-primary btn-block">Simpan</button>
+          <button type="submit" name="btn_simpan" class="btn btn-rounded btn-primary btn-block">Simpan</button>
         </div>
 
       </form>

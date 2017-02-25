@@ -18,6 +18,7 @@ class Pupuk extends CI_Controller {
 			'view'=>'pupuk',
 			'open'=>'class="accordion-toggle menu-open"',
 			'active'=>'class="active"',
+
 			'data'=>$this->pupuk_m->tampilData(),
 			'url_hapus'=>base_url().'pupuk/hapus'
 		);
@@ -25,12 +26,8 @@ class Pupuk extends CI_Controller {
 	}
 
 	function simpan(){
-		$nama_pupuk=$this->input->post('nama_pupuk');
-		$spesifikasi_pupuk=$this->input->post('spesifikasi_pupuk');
-		$sifat_pupuk= md5($this->input->post('sifat_pupuk'));
-		$gambar=$this->input->post('gambar');
-
-		$this->admin_m->simpan($nama_pupuk,$spesifikasi_pupuk,$sifat_pupuk,$gambar);
+		
+		$this->pupuk_m->simpan();
 		// $this->session->set_flashdata('simpan','1');
 		// redirect('admin');
 		echo '1';
